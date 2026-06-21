@@ -60,17 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (totalScore <= 4) {
             resultCard.style.borderColor = '#ED5762';
             resultStatus.style.color = '#ED5762';
-            resultImage.src = '../IMG/result-1.png'; // путь к картинке result-1
+            resultImage.src = 'IMG/result-1.png'; // путь к картинке result-1
             resultStatus.textContent = 'низкий уровень безопасности';
         } else if (totalScore <= 7) {
             resultCard.style.borderColor = '#ED8F16';
             resultStatus.style.color = '#ED8F16'; 
-            resultImage.src = '../IMG/result-2.png'; // путь к картинке result-2
+            resultImage.src = 'IMG/result-2.png'; // путь к картинке result-2
             resultStatus.textContent = 'средний уровень безопасности';
         } else {
             resultCard.style.borderColor = '#50C23D';
             resultStatus.style.color = '#50C23D'; 
-            resultImage.src = '../IMG/result-3.png'; // путь к картинке result-3
+            resultImage.src = 'IMG/result-3.png'; // путь к картинке result-3
             resultStatus.textContent = 'высокий уровень безопасности';
         }
 
