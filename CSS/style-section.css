@@ -13,10 +13,12 @@ body {
     font-size: 19px;
     height: 100vh;           /* Добавлено: задаём высоту для body */
     overflow: hidden;        /* Добавлено: убираем глобальную прокрутку */
+    min-width: 1536px;
 }
 
 .sidebar {
     width: 292px;
+    min-width: 292px;
     background: #150A33;
     height: 100vh;
     padding: 20px 0;
@@ -103,6 +105,8 @@ main {
     position: relative;
     height: 100vh;           /* Добавлено: высота на весь экран */
     overflow-y: auto;        /* Добавлено: включаем вертикальную прокрутку для содержимого */
+    width: 1244px;
+    min-width: 1244px;
 }
 
 /* Стилизация скроллбара для основной области (опционально) */
