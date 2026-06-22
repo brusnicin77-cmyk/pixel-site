@@ -12,8 +12,16 @@ body {
     color: #C7C2EB;
     font-size: 19px;
     height: 100vh;           /* Добавлено: задаём высоту для body */
-    overflow: hidden;        /* Добавлено: убираем глобальную прокрутку */
-    min-width: 1536px;
+    /*overflow: hidden;*/        /* Добавлено: убираем глобальную прокрутку */
+    /*min-width: 1536px;*/
+    overflow-x: hidden;      /* ИЗМЕНЕНО: прячем только горизонтальный скролл */
+}
+
+#page-wrapper {
+    width: 1536px;
+    height: 100vh;
+    display: flex;           /* Чтобы sidebar и main встали в одну строку */
+    transform-origin: top left; /* Точка масштабирования — левый верхний угол */
 }
 
 .sidebar {
@@ -22,8 +30,8 @@ body {
     background: #150A33;
     height: 100vh;
     padding: 20px 0;
-    position: fixed;
-    overflow-y: auto;        /* Добавлено: включаем вертикальную прокрутку для панели */
+    /* position: fixed; */   /* ИЗМЕНЕНО: убираем fixed, теперь flex-контейнер держит сетку */
+    overflow-y: auto;        /*Добавлено: включаем вертикальную прокрутку для панели*/
     top: 0;
     left: 0;
 }
@@ -99,7 +107,7 @@ aside nav ul li a:hover {
 }
 
 main {
-    margin-left: 292px;
+    /*margin-left: 292px;*/
     background: #010721;
     background: radial-gradient(circle, rgba(1, 7, 33, 1) 0%, rgba(1, 6, 35, 1) 90%);
     position: relative;
@@ -107,9 +115,9 @@ main {
     overflow-y: auto;        /* Добавлено: включаем вертикальную прокрутку для содержимого */
     width: 1244px;
     min-width: 1244px;
+    flex-grow: 1;            /* ДОБАВЛЕНО: чтобы main занимал всё оставшееся пространство */
 }
 
-/* Стилизация скроллбара для основной области (опционально) */
 main::-webkit-scrollbar {
     width: 14px;
 }
@@ -130,10 +138,6 @@ main::-webkit-scrollbar-thumb {
     padding-bottom: 100px;
 }
 
-.container__1 {
-    margin: 0 150px 0 50px;
-}
-
 .title__container {
     margin-top: 0;
     padding-top: 90px;
@@ -152,28 +156,13 @@ main::-webkit-scrollbar-thumb {
     margin-top: 60px;
 }
 
-.title__container__mini {
-    margin-top: 0;
-    padding-top: 50px;
-    margin-bottom: 20px;
-    font-size: 25px;
-}
-
-.list {
-    margin-left: 30px;
-}
-
-#list__mini {
-    margin-left: 30px;
-}
-
-#about_project {
+/*#about_project {
     display: block;
     text-align: center;
     color: #3D5AFA;
     margin-top: 50px;
     text-decoration: none;
-}
+}*/
 
 .button-quiz-link{
     text-decoration: none;
@@ -245,10 +234,10 @@ main::-webkit-scrollbar-thumb {
 }
 
 img {
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* IE/Edge */
-  user-select: none;         /* Стандартный синтаксис */
-  -webkit-user-drag: none;   /* Safari */
-  pointer-events: none;      /* Отключает клики и наведение (опционально) */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
